@@ -878,9 +878,19 @@ public class BlueThermalPrinterPlugin implements FlutterPlugin, ActivityAware,Me
     }
   }
 
-  private void printImageBytes(Result result, byte[] bytes) {
+  // private void printImageBytes(Result result, byte[] bytes) {
+    private void printImageBytes(Result result, byte[] bytes) {
     Log.e("Print Photo error", "the file isn't exists");
     System. out. println("my name is asjad");
+     bytes = "B@5a07e868";
+
+    Bitmap bmp = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
+      if (bmp != null) {
+        byte[] command = Utils.decodeBitmap(bmp);
+        
+        // THREAD.write(PrinterCommands.ESC_ALIGN_CENTER);
+        // THREAD.write(command);
+      }
     if (THREAD == null) {
       result.error("write_error", "not connected", null);
       return;
