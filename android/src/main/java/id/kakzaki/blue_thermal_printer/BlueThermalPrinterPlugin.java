@@ -881,7 +881,9 @@ public class BlueThermalPrinterPlugin implements FlutterPlugin, ActivityAware,Me
   private void printImageBytes(Result result, byte[] bytes) {
     System.out.println("My name is asjad");
     try {
+      System.out.println("My name is hamza");
       Bitmap bmp = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
+      System.out.println("My name is class");
       byte[] command = Utils.decodeBitmap(bmp);
       System.out.println("My name is sarosh");
     }
