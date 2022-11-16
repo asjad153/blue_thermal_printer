@@ -21,7 +21,10 @@ public class Utils {
     public static byte[] decodeBitmap(Bitmap bmp){
         int bmpWidth = bmp.getWidth();
         int bmpHeight = bmp.getHeight();
-       
+        System.out.println("aaaaaaaa");
+        System.out.println(bmpWidth);
+        System.out.println(bmpHeight);
+        System.out.println("bbbbbbbbb");
 
         List<String> list = new ArrayList<String>(); //binaryString list
         StringBuffer sb;
@@ -64,7 +67,7 @@ public class Utils {
         String widthHexString = Integer
                 .toHexString(bmpWidth % 8 == 0 ? bmpWidth / 8
                         : (bmpWidth / 8 + 1));
-        if (widthHexString.length() > 15) {
+        if (widthHexString.length() > 10) {
             Log.e("decodeBitmap error", " width is too large");
             return null;
         } else if (widthHexString.length() == 1) {
@@ -73,7 +76,7 @@ public class Utils {
         widthHexString = widthHexString + "00";
 
         String heightHexString = Integer.toHexString(bmpHeight);
-        if (heightHexString.length() > 15) {
+        if (heightHexString.length() > 10) {
             Log.e("decodeBitmap error", " height is too large");
             return null;
         } else if (heightHexString.length() == 1) {
