@@ -879,38 +879,24 @@ public class BlueThermalPrinterPlugin implements FlutterPlugin, ActivityAware,Me
   }
 
   private void printImageBytes(Result result, byte[] bytes) {
-    System.out.println("My name is asjad");
+    if (THREAD == null) {
+      result.error("write_error", "not connected", null);
+      return;
+    }
     try {
-      System.out.println("My name is hamza");
       Bitmap bmp = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
-      System.out.println("My name is class");
-      byte[] command = Utils.decodeBitmap(bmp);
-      System.out.println("My name is sarosh");
+      if (bmp != null) {
+        byte[] command = Utils.decodeBitmap(bmp);
+        THREAD.write(PrinterCommands.ESC_ALIGN_CENTER);
+        THREAD.write(command);
+      } else {
+        Log.e("Print Photo error", "the file isn't exists");
+      }
+      result.success(true);
+    } catch (Exception ex) {
+      Log.e(TAG, ex.getMessage(), ex);
+      result.error("write_error", ex.getMessage(), exceptionToString(ex));
     }
-    catch(Exception e)
-    {
-      System.out.println("Exception Occur!");
-    }
-    //-----------------------------------------------
-
-    // if (THREAD == null) {
-    //   result.error("write_error", "not connected", null);
-    //   return;
-    // }
-    // try {
-    //   Bitmap bmp = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
-    //   if (bmp != null) {
-    //     byte[] command = Utils.decodeBitmap(bmp);
-    //     // THREAD.write(PrinterCommands.ESC_ALIGN_CENTER);
-    //     // THREAD.write(command);
-    //   } else {
-    //     Log.e("Print Photo error", "the file isn't exists");
-    //   }
-    //   result.success(true);
-    // } catch (Exception ex) {
-    //   Log.e(TAG, ex.getMessage(), ex);
-    //   result.error("write_error", ex.getMessage(), exceptionToString(ex));
-    // }
   }
 
   private void printQRcode(Result result, String textToQR, int width, int height, int align) {
