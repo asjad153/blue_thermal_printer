@@ -81,11 +81,11 @@ System.out.print("My name is asjad");
     widthHexString = widthHexString + "00";
 
     String heightHexString = Integer.toHexString(bmpHeight);
-    System.out.print("Height final");
-    System.out.print(heightHexString.length());
-    System.out.print(widthHexString.length());
-    System.out.print("Width final");
-    if (heightHexString.length() > 1) {
+    // System.out.print("Height final");
+    // System.out.print(heightHexString.length());
+    // System.out.print(widthHexString.length());
+    // System.out.print("Width final");
+    if (heightHexString.length() > 2) {
         Log.e("decodeBitmap error", " height is too large");
         return null;
     } else if (heightHexString.length() == 1) {

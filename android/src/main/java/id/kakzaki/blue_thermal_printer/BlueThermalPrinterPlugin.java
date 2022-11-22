@@ -881,6 +881,7 @@ public class BlueThermalPrinterPlugin implements FlutterPlugin, ActivityAware,Me
   }
 
   private void printImageBytes(Result result, byte[] bytes) {
+    Log.e("aaa", " height is too large");
     System.out.print("My name is hamza");
     print("My name is...");
 
