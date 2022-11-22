@@ -20,8 +20,9 @@ public class Utils {
 
     public static byte[] decodeBitmap(Bitmap bmp){
             //Bitmap bmp = Bitmap.createScaledBitmap(bitmap, 50, 50, false);
+             
     int maxWidth = 350;
-
+System.out.print("My name is asjad");
     int bmpWidth = bmp.getWidth();
     int bmpHeight = bmp.getHeight();
 
@@ -32,7 +33,7 @@ public class Utils {
         bmpHeight = Math.round(bmpWidth / aspectRatio);
         bmp = Bitmap.createScaledBitmap(bmp, bmpWidth, bmpHeight, false);
     }
-
+    System.out.print("My name is sarosh");
     List<String> list = new ArrayList<>(); //binaryString list
     StringBuffer sb;
 
