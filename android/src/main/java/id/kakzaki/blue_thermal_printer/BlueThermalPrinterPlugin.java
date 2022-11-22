@@ -859,6 +859,7 @@ public class BlueThermalPrinterPlugin implements FlutterPlugin, ActivityAware,Me
 
   private void printImage(Result result, String pathImage) {
     System.out.print("My name is hamza");
+    print("My name is...");
     if (THREAD == null) {
       result.error("write_error", "not connected", null);
       return;
