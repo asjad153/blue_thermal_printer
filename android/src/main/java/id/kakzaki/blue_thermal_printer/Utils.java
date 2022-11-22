@@ -85,7 +85,7 @@ System.out.print("My name is asjad");
     System.out.print(heightHexString.length());
     System.out.print(widthHexString.length());
     System.out.print("Width final");
-    if (heightHexString.length() > 3) {
+    if (heightHexString.length() > 1) {
         Log.e("decodeBitmap error", " height is too large");
         return null;
     } else if (heightHexString.length() == 1) {
