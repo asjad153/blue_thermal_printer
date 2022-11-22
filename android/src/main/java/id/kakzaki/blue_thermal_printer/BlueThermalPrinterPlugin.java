@@ -858,8 +858,7 @@ public class BlueThermalPrinterPlugin implements FlutterPlugin, ActivityAware,Me
   }
 
   private void printImage(Result result, String pathImage) {
-    System.out.print("My name is hamza");
-    print("My name is...");
+   
     if (THREAD == null) {
       result.error("write_error", "not connected", null);
       return;
@@ -868,7 +867,7 @@ public class BlueThermalPrinterPlugin implements FlutterPlugin, ActivityAware,Me
       Bitmap bmp = BitmapFactory.decodeFile(pathImage);
       if (bmp != null) {
         byte[] command = Utils.decodeBitmap(bmp);
-        System.out.print("My name is data");
+        
         THREAD.write(PrinterCommands.ESC_ALIGN_CENTER);
         THREAD.write(command);
       } else {
@@ -882,14 +881,22 @@ public class BlueThermalPrinterPlugin implements FlutterPlugin, ActivityAware,Me
   }
 
   private void printImageBytes(Result result, byte[] bytes) {
+    System.out.print("My name is hamza");
+    print("My name is...");
+
     if (THREAD == null) {
       result.error("write_error", "not connected", null);
       return;
     }
     try {
+      System.out.print("My name is data");
       Bitmap bmp = BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
+      System.out.print("bmp final");
+      System.out.print(bmp);
+      System.out.print("bmp final");
       if (bmp != null) {
         byte[] command = Utils.decodeBitmap(bmp);
+        System.out.print("final Method");
         THREAD.write(PrinterCommands.ESC_ALIGN_CENTER);
         THREAD.write(command);
       } else {
