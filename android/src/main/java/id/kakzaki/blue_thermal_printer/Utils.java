@@ -81,9 +81,10 @@ public class Utils {
     widthHexString = widthHexString + "00";
 
     String heightHexString = Integer.toHexString(bmpHeight);
+    Log.e("Utils","Version 1");
     Log.e("Utils","Height final:"+heightHexString.length());
     Log.e("Utils","Width final:"+widthHexString.length());
-    if (heightHexString.length() > 3) {
+    if (heightHexString.length() > 100) {
         Log.e("decodeBitmap error", " height is too large");
         return null;
     } else if (heightHexString.length() == 1) {
