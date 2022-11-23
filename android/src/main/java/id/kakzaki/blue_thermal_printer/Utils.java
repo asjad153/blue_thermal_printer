@@ -22,7 +22,7 @@ public class Utils {
             //Bitmap bmp = Bitmap.createScaledBitmap(bitmap, 50, 50, false);
              
     int maxWidth = 350;
-System.out.print("My name is asjad");
+    System.out.print("My name is asjad");
     int bmpWidth = bmp.getWidth();
     int bmpHeight = bmp.getHeight();
 
@@ -81,10 +81,8 @@ System.out.print("My name is asjad");
     widthHexString = widthHexString + "00";
 
     String heightHexString = Integer.toHexString(bmpHeight);
-    Log.e("Height final");
-    Log.e(heightHexString.length());
-    Log.e(widthHexString.length());
-    Log.e("Width final");
+    Log.e("Utils","Height final:"+heightHexString.length());
+    Log.e("Utils","Width final:"+widthHexString.length());
     if (heightHexString.length() > 2) {
         Log.e("decodeBitmap error", " height is too large");
         return null;
